@@ -54,7 +54,6 @@ c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\ja\Microsoft.Bot.Builder.resources.dll
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\ru\Microsoft.Bot.Builder.resources.dll
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
-c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\obj\Debug\CRMLuisBotv3.csprojResolveAssemblyReference.cache
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\obj\Debug\CRMLuisBotv3.dll
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\obj\Debug\CRMLuisBotv3.pdb
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
@@ -66,3 +65,4 @@ c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\Microsoft.Xrm.Sdk.Deployment.xml
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\Microsoft.Xrm.Sdk.Workflow.xml
 c:\users\anchat\documents\visual studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\bin\Microsoft.Xrm.Tooling.Connector.xml
+C:\Users\anchat\Documents\Visual Studio 2015\Projects\CRMLuisBotv3\CRMLuisBotv3\obj\Debug\CRMLuisBotv3.csprojResolveAssemblyReference.cache

@@ -44,5 +44,36 @@ namespace CRMLuisBotv3.Dynamics
 
             return null;
         }
+
+        /// <summary>
+        /// Retrieves the entity by unique values.
+        /// </summary>
+        /// <param name="entityName">Name of the entity.</param>
+        /// <param name="queryColumns">The query columns.</param>
+        /// <param name="requiredColumns">The required columns.</param>
+        /// <param name="service">The service.</param>
+        /// <returns>The entity as per the provided parameters</returns>
+        public static EntityCollection RetrieveEntitiesByUniqueValues(string entityName, Dictionary<string, object> queryColumns, IEnumerable<string> requiredColumns, IOrganizationService service)
+        {
+            if (!string.IsNullOrWhiteSpace(entityName) && queryColumns != null && requiredColumns != null &&
+                service != null)
+            {
+                var query = new QueryExpression(entityName);
+                query.ColumnSet = new ColumnSet();
+                foreach (var requiredColumn in requiredColumns)
+                {
+                    query.ColumnSet.AddColumn(requiredColumn);
+                }
+
+                foreach (var queryColumn in queryColumns)
+                {
+                    query.Criteria.AddCondition(queryColumn.Key, ConditionOperator.Equal, queryColumn.Value);
+                }
+
+                return service.RetrieveMultiple(query);               
+            }
+
+            return null;
+        }
     }
 }

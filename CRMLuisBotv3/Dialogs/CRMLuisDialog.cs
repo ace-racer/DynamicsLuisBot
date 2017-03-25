@@ -1,4 +1,5 @@
 ﻿using CRMLuisBotv3.Dynamics;
+using CRMLuisBotv3.Models;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
@@ -41,17 +42,33 @@ namespace CRMLuisBotv3.Dialogs
                 await context.PostAsync($"Looking up the user with phone number '{phoneNumber}' in our system");
                 if(!string.IsNullOrWhiteSpace(phoneNumber))
                 {
-                    Microsoft.Xrm.Sdk.Entity contactEntity = null;
+                   CrmDetail crmDetail = null;
 
                     // get details of contact with phone number in CRM
-                    if(CRMHelpers.TryGetContactDetailsFromDynamics(phoneNumber, out contactEntity))
+                    if(CRMHelpers.TryGetDetailsFromDynamics(phoneNumber, out crmDetail))
                     {
-                        var contactName = contactEntity.GetAttributeValue<string>("fullname");
-                        await context.PostAsync($"Welcome {contactName}! Please wait as we search for your cases registered with us...");
-                        // var resultMessage = context.MakeMessage();
+                        if (crmDetail != null)
+                        {
+                            // var contactName = contactEntity.GetAttributeValue<string>("fullname");
+                            await context.PostAsync($"Welcome {crmDetail.ContactDetails.FullName}! Please wait as we search for your cases registered with us...");
+                            var resultMessage = context.MakeMessage();
+                            resultMessage.AttachmentLayout = AttachmentLayoutTypes.Carousel;
+                            resultMessage.Attachments = new List<Attachment>();
 
-                        // if contact exists then show the details of the last 5 cases sorted by created on date
-                        // based on details selected show the case details
+                            foreach (var caseDetail in crmDetail.ContactCaseDetails)
+                            {
+                                ThumbnailCard thumbnailCard = new ThumbnailCard()
+                                {
+                                    Title = caseDetail.CaseTitle,
+                                    Text = caseDetail.CaseDescription                                                                       
+                                };
+
+                                resultMessage.Attachments.Add(thumbnailCard.ToAttachment());
+                            }
+
+                            await context.PostAsync(resultMessage);
+                            context.Wait(this.MessageReceived);                          
+                        }
                     }
                     else
                     {

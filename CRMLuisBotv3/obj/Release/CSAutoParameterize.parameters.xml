@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CRMConnectionString-Web.config Connection String" description="CRMConnectionString Connection String used in web.config by the application to access the database." defaultValue="AuthType=Office365;Username=anurag@anubotcorp.onmicrosoft.com; Password=Microsoft~1;Url=https://anubotcorp.crm8.dynamics.com" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\anchat\\Documents\\Visual\ Studio\ 2015\\Projects\\CRMLuisBotv3\\CRMLuisBotv3\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CRMConnectionString']/@connectionString" />
+  </parameter>
+</parameters>
