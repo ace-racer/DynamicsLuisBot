@@ -12,7 +12,7 @@ using System.Web;
 
 namespace CRMLuisBotv3.Dialogs
 {
-    [LuisModel("20006101-5c9b-4a1a-9d94-b0b897c3c4f5", "87452bafe2bd46d29b5b721525409212")]
+    [LuisModel("Update1", "Update2")]
     [Serializable]
     public class CRMLuisDialog : LuisDialog<object>
     {
